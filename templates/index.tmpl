@@ -1,0 +1,32 @@
+
+{{define "index" }}
+{{template "header" }}
+        <div class="document-center">
+            <div class="container">
+                <table class="table-striped table-bordered dataTable no-footer" style="width: 100%;">
+                    <thead class="sorting" style="background: #251b1b;color: white;">
+                        <tr role="row"><th tabindex="0" style="width: 107px;height:30px">Fecha de publicacion</th>
+                        <th tabindex="0" style="width: 321px;">Titulo</th>
+                        <th tabindex="0" style="width: 172px;">Autor(es)</th>
+                        <th tabindex="0" style="width: 86px;">Descargar</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0000-00-0</td>
+                            <td>
+                                <a href='#'>Título</a>
+                                <br>
+                            </td>
+                            <td>Autor</td>
+                            <td class="download-post download-posts">
+                                <a target="_blank" href="#"><i class="fa-solid fa-eye"></i></a> <a href="#" download="#"><i class="fa-solid fa-circle-down"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="/ajax.js"></script>
+    </body>
+</html>
+{{end}}
