@@ -41,9 +41,8 @@ function autocom(inputBox,rute,click){
             //Peticcion Ajax
             const XHR = new XMLHttpRequest();
             //Obtencion de respuesta de la otra pagina
-            XHR.open('POST',rute,true);
-            XHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            XHR.send(inputBox.name+"="+inputBox.value);
+            XHR.open('POST',rute+"/"+inputBox.value,true);
+            XHR.send(0);
             
             XHR.onreadystatechange = function() {
                 if(this.readyState == "4" && this.status =="200" ){
@@ -53,7 +52,7 @@ function autocom(inputBox,rute,click){
                         autocomplete.innerHTML='';
                         dataAJax = JSON.parse(this.responseText);
                         for(let i = 0; i < 6; i++){
-                            datas=dataAJax['items'][i]?.['nombre'];//optional chaining operator (?.)
+                            datas=dataAJax[i];//optional chaining operator (?.)
                             if(inputBox.value.length>0&&datas!==undefined){
                                 listData = `<div onclick="${(click=="click")?'select(this.innerHTML)':'selected(this.innerHTML)'}">${datas}</div>`;
                                 autocomplete.insertAdjacentHTML("afterbegin", listData);

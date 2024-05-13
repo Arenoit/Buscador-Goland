@@ -8,25 +8,23 @@
                         <tr role="row"><th tabindex="0" style="width: 107px;height:30px">Fecha de publicacion</th>
                         <th tabindex="0" style="width: 321px;">Titulo</th>
                         <th tabindex="0" style="width: 172px;">Autor(es)</th>
-                        <th tabindex="0" style="width: 86px;">Descargar</th>
                     </thead>
                     <tbody>
+                        {{range .}}
                         <tr>
-                            <td>0000-00-0</td>
-                            <td>
-                                <a href='#'>Título</a>
-                                <br>
-                            </td>
-                            <td>Autor</td>
-                            <td class="download-post download-posts">
-                                <a target="_blank" href="#"><i class="fa-solid fa-eye"></i></a> <a href="#" download="#"><i class="fa-solid fa-circle-down"></i></a>
-                            </td>
+                            <td>{{.Fecha}}</td>
+                            <td><a href='#'>{{.Titulo}}</a></td>
+                            <td>{{.Autor}}</td>
                         </tr>
+                        {{end}}
                     </tbody>
                 </table>
             </div>
         </div>
         <script src="/ajax.js"></script>
+        <script>
+            autocom(document.querySelector("nav > .search-box > #seeker"),"/api","click");
+        </script>
     </body>
 </html>
 {{end}}

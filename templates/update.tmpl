@@ -1,60 +1,63 @@
 {{define "update" }}
 {{template "header" }}
-<div class="document-center">
-    <div>
-        <div style="width:32rem;background:#fff;border-radius:10px;padding:18px 25px 20px;">
-            <div class="card-header" style="color: white;background-color:#ac49fb;padding: 0.75rem 1.25rem;border-radius: 5px;text-align: center;">
-                <h2>Editar Projecto</h2>
-                </div>
-                <style>
-                span{
-                    color: inherit;
-                    background-color: #fff0;
-                    border-radius: 0;
-                    min-width: 0;
-                    padding: 0;
-                    line-height: 0;
-                    float: none;
-                }
-                .form-control{
-                    border-radius: 5px;
-                    border: 1px solid #a6a6a6;
-                }
-                .autocom-box div{
-                    width: 463px;
-                }
-                @media (max-width: 525px){
+    <div class="document-center">
+        <div>
+            <div style="width:32rem;background:#fff;border-radius:10px;padding:18px 25px 20px;">
+                <div class="card-header" style="color: white;background-color:#ac49fb;padding: 0.75rem 1.25rem;border-radius: 5px;text-align: center;">
+                    <h2>Editar Projecto</h2>
+                    </div>
+                    <style>
+                    span{
+                        color: inherit;
+                        background-color: #fff0;
+                        border-radius: 0;
+                        min-width: 0;
+                        padding: 0;
+                        line-height: 0;
+                        float: none;
+                    }
+                    .form-control{
+                        border-radius: 5px;
+                        border: 1px solid #a6a6a6;
+                    }
                     .autocom-box div{
-                    width: max-content;
+                        width: 463px;
                     }
-                    .home-section{
-                        left: 75px;
+                    @media (max-width: 525px){
+                        .autocom-box div{
+                        width: max-content;
+                        }
+                        .home-section{
+                            left: 75px;
+                        }
+                        .sidebar.active ~ .home-section{
+                        width: calc(100% + 73px);
+                        }
                     }
-                    .sidebar.active ~ .home-section{
-                    width: calc(100% + 73px);
-                    }
-                }
-                </style>
-                <input type="text" name="ID"  value="{{.ID}}" class="form-control" form="usrform" style="visibility:hidden" required><br>
-                
-                <label> Titulo: </label>
-                <input type="text" name="titulo"  value="<?=$titulo;?>" class="form-control" form="usrform" required><br>
+                    </style>
+                    <input type="text" name="ID"  value="{{.ID}}" class="form-control" form="usrform" style="visibility:hidden" required><br>
+                    
+                    <label> Titulo: </label>
+                    <input type="text" name="titulo"  value="{{.Titulo}}" class="form-control" form="usrform" required><br>
 
-                <label> Autor: </label>
-                <input type="text" name="autor"  value="<?=$autor;?>" class="form-control" form="usrform" required><br>
+                    <label> Autor: </label>
+                    <input type="text" name="autor"  value="{{.Autor}}" class="form-control" form="usrform" required><br>
 
-                <label>Fecha de publicacion:</label>
-                <input type="date" name="fecha"  value="<?=$fecha;?>" class="form-control" form="usrform"><br>
-                
-                <form action="/update" method="POST" id="usrform">
-                    <!-- <div></div> -->
-                    <button class="btn-save" type="submit">Guardar</button>
-                    <a class="btn btn-info" type="submit" name="cancel" href="./search"> Cancel </a><br>
-                </form>
+                    <label>Fecha de publicacion:</label>
+                    <input type="date" name="fecha"  value="{{.Fecha}}" class="form-control" form="usrform"><br>
+                    
+                    <form action="/update" method="POST" id="usrform">
+                        <!-- <div></div> -->
+                        <button class="btn-save" type="submit">Guardar</button>
+                        <a class="btn btn-info" type="submit" name="cancel" href="/crud"> Cancel </a><br>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="/ajax.js"></script>
+        <script src="/ajax.js"></script>
+        <script>
+            autocom(document.querySelector("nav > .search-box > #seeker"),"/api","click");
+        </script>
     </body>
 </html>
 {{end}}

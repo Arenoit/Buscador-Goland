@@ -44,6 +44,8 @@ func main() {
 	http.HandleFunc("/insert", routes.PostTaskHandler)    //POST
 	http.HandleFunc("/update", routes.PutTaskHandler)     //PUT
 	http.HandleFunc("/delete/", routes.DeleteTaskHandler) //DELETE
+	//Buscador Autocompletado
+	http.HandleFunc("/api/", routes.Searcher)
 	// Task Routes
 	http.HandleFunc("/style.css", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "css/style.css")
