@@ -8,6 +8,7 @@ Sistema que consta de una CRUD y buscador
 - Ajax para busqueda en tiempo real
 - Insertar,Editar y Eliminar simple sin asistencia de Javascript
 - Base de Datos Postgres asistida por GORM (herramienta de asignación relacional de objetos)
+
 [![Buscador.png](https://i.postimg.cc/ncxRHx3g/Buscador.png)](https://postimg.cc/8syBH2Qm)
 
 ## 💬 Código - Indicaciones
