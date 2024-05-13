@@ -37,10 +37,12 @@ func main() {
 	http.HandleFunc("/", routes.Index)
 	http.HandleFunc("/crud", routes.Crud)
 	http.HandleFunc("/create", routes.Create)
-	//API REST
+	http.HandleFunc("/project/", routes.Update)
+	//API - considerando que HTML solo tiene GET y POST
 	http.HandleFunc("/list", routes.GetTasksHandler)      //GET
 	http.HandleFunc("/list/", routes.GetTaskHandler)      //GET/{id}
 	http.HandleFunc("/insert", routes.PostTaskHandler)    //POST
+	http.HandleFunc("/update", routes.PutTaskHandler)     //PUT
 	http.HandleFunc("/delete/", routes.DeleteTaskHandler) //DELETE
 	// Task Routes
 	http.HandleFunc("/style.css", func(w http.ResponseWriter, r *http.Request) {

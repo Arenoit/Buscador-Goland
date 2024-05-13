@@ -1,10 +1,10 @@
-{{define "create" }}
+{{define "update" }}
 {{template "header" }}
 <div class="document-center">
     <div>
         <div style="width:32rem;background:#fff;border-radius:10px;padding:18px 25px 20px;">
             <div class="card-header" style="color: white;background-color:#ac49fb;padding: 0.75rem 1.25rem;border-radius: 5px;text-align: center;">
-                <h2>Nuevo Projecto</h2>
+                <h2>Editar Projecto</h2>
                 </div>
                 <style>
                 span{
@@ -35,7 +35,8 @@
                     }
                 }
                 </style>
-
+                <input type="text" name="ID"  value="{{.ID}}" class="form-control" form="usrform" style="visibility:hidden" required><br>
+                
                 <label> Titulo: </label>
                 <input type="text" name="titulo"  value="<?=$titulo;?>" class="form-control" form="usrform" required><br>
 
@@ -45,7 +46,7 @@
                 <label>Fecha de publicacion:</label>
                 <input type="date" name="fecha"  value="<?=$fecha;?>" class="form-control" form="usrform"><br>
                 
-                <form action="/insert" method="POST" id="usrform">
+                <form action="/update" method="POST" id="usrform">
                     <!-- <div></div> -->
                     <button class="btn-save" type="submit">Guardar</button>
                     <a class="btn btn-info" type="submit" name="cancel" href="./search"> Cancel </a><br>
