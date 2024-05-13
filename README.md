@@ -8,6 +8,8 @@ Sistema que consta de una CRUD y buscador
 - Ajax para busqueda en tiempo real
 - Insertar,Editar y Eliminar simple sin asistencia de Javascript
 - Base de Datos Postgres asistida por GORM (herramienta de asignación relacional de objetos)
+[![Buscador.png](https://i.postimg.cc/ncxRHx3g/Buscador.png)](https://postimg.cc/8syBH2Qm)
+
 ## 💬 Código - Indicaciones
 Se necesita de una terminal, instalar Goland previamente, necesario estar dentro de la carpeta
 Comandos a ejecutar en Comand Promt o en PowerShell:
@@ -39,7 +41,7 @@ En el caso que se salga y se quiera volver a entrar usar, las sentencias SQL nec
     \d tasks
     SELECT * FROM tasks;
 
-* Docker
+** Docker
 
 Utilizar Docker para Windows, es necesario tener Hyper-V que solo soportan pocas computadoras para la Virtualización Anidada,
 en el caso que la máquina que tenemos no lo soporte utilizar una máguina vritual normal como VirtualBox que necesita.
